@@ -6,7 +6,6 @@ import {
   Get,
   NotFoundException,
 } from '@nestjs/common';
-import { map } from 'rxjs';
 import { PatientPresenter } from '../presenter/patient-data-presenter';
 
 @Controller('patient')

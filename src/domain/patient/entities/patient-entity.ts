@@ -1,14 +1,17 @@
-import { Entity } from '@/core/entities/entity';
+import { AggregateRoot } from '@/core/entities/aggregate-root';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
+import { Optional } from '@prisma/client/runtime/library';
 
 export interface PatientProps {
   name: string;
   email: string;
   phone: string;
   isActive: boolean;
+  createdAt: Date;
+  updatedAt?: Date | null;
 }
 
-export class PatientEntity extends Entity<PatientProps> {
+export class PatientEntity extends AggregateRoot<PatientProps> {
   get name(): string {
     return this.props.name;
   }
@@ -37,8 +40,26 @@ export class PatientEntity extends Entity<PatientProps> {
     this.props.isActive = value;
   }
 
-  static create(props: PatientProps, id?: UniqueEntityID): PatientEntity {
-    const patient = new PatientEntity(props, id);
+  get createdAt() {
+    return this.props.createdAt;
+  }
+
+  get updatedAt() {
+    return this.props.updatedAt;
+  }
+
+  static create(
+    props: Optional<PatientProps, 'createdAt' | 'updatedAt'>,
+    id?: UniqueEntityID,
+  ) {
+    const patient = new PatientEntity(
+      {
+        ...props,
+        createdAt: props.createdAt ?? new Date(),
+        updatedAt: props.updatedAt ?? null,
+      },
+      id,
+    );
 
     return patient;
   }

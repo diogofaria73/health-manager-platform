@@ -7,21 +7,21 @@ import { ListPatientAbstractRepository } from '../contracts/list-patient-abstrac
 type createPatientUseCaseResponse = Either<
   PatientsNotFound,
   {
-    patient: PatientEntity[];
+    patient: PatientEntity;
   }
 >;
 
 @Injectable()
-export class ListAllPatientsUseCase {
+export class ListPatientByIdUseCase {
   constructor(
     private readonly patientRepository: ListPatientAbstractRepository,
   ) {}
-  async execute(): Promise<createPatientUseCaseResponse> {
-    const allPatients = await this.patientRepository.listAll();
+  async execute(id: string): Promise<createPatientUseCaseResponse> {
+    const patient = await this.patientRepository.listById(id);
 
-    if (!allPatients) {
+    if (!patient) {
       return left(new PatientsNotFound());
     }
-    return right({ patient: allPatients });
+    return right({ patient });
   }
 }

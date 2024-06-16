@@ -10,7 +10,7 @@ export class ListPatientsConcreteRepository
 {
   constructor(private readonly prisma: PrismaService) {}
 
-  async findAll(): Promise<PatientEntity[]> {
+  async listAll(): Promise<PatientEntity[]> {
     const patients = await this.prisma.patient.findMany();
 
     return patients
@@ -20,7 +20,7 @@ export class ListPatientsConcreteRepository
       : [];
   }
 
-  async findByEmail(email: string): Promise<PatientEntity | null> {
+  async listByEmail(email: string): Promise<PatientEntity | null> {
     const patient = await this.prisma.patient.findFirst({
       where: {
         email: email,
@@ -32,8 +32,8 @@ export class ListPatientsConcreteRepository
       : null;
   }
 
-  async findById(id: string): Promise<PatientEntity | null> {
-    const patient = await this.prisma.patient.findFirst({
+  async listById(id: string): Promise<PatientEntity | null> {
+    const patient = await this.prisma.patient.findUnique({
       where: {
         id: id,
       },

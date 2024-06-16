@@ -8,13 +8,26 @@ import { ListAllPatientsController } from './actions/list-all-patient-controller
 import { ListAllPatientsUseCase } from '@/domain/patient/use-cases/list-all-patients-use-case';
 import { ListPatientsConcreteRepository } from '@/infra/databases/repositories/patient/list-patients-concrete-repository';
 import { ListPatientAbstractRepository } from '@/domain/patient/contracts/list-patient-abstract-repository';
+import { UpdateAndDeleteAbstractRepository } from '@/domain/patient/contracts/update-and-delete-abstract-repository';
+import { UpdateAndDeleteConcreteRepository } from '@/infra/databases/repositories/patient/updated-and-delete-concrete-repository';
+import { ListPatientByEmailUseCase } from '@/domain/patient/use-cases/list-patients-by-email-use-case';
+import { ListPatientByIdUseCase } from '@/domain/patient/use-cases/list-patients-by-id-use-case';
+import { ListPatientByEmailController } from './actions/list-patient-by-email-controller';
+import { ListPatientByIdController } from './actions/list-patient-by-id-controller';
 
 @Module({
   imports: [DatabaseModule],
-  controllers: [CreatePatientController, ListAllPatientsController],
+  controllers: [
+    CreatePatientController,
+    ListAllPatientsController,
+    ListPatientByEmailController,
+    ListPatientByIdController,
+  ],
   providers: [
     CreatePatientUseCase,
     ListAllPatientsUseCase,
+    ListPatientByEmailUseCase,
+    ListPatientByIdUseCase,
     CreatePatientConcreteRepository,
     {
       provide: CreatePatientAbstractRepository,
@@ -24,6 +37,11 @@ import { ListPatientAbstractRepository } from '@/domain/patient/contracts/list-p
     {
       provide: ListPatientAbstractRepository,
       useClass: ListPatientsConcreteRepository,
+    },
+    UpdateAndDeleteConcreteRepository,
+    {
+      provide: UpdateAndDeleteAbstractRepository,
+      useClass: UpdateAndDeleteConcreteRepository,
     },
   ],
   exports: [],

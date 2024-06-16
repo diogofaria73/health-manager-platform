@@ -42,9 +42,9 @@ export class CreatePatientController {
 
       switch (error.constructor) {
         case PatientAlreadyExistsError:
-          throw new ConflictException(error);
+          return new ConflictException(error);
         default:
-          throw new BadRequestException(error.message);
+          return new BadRequestException(error.message);
       }
     }
     return { patient: PatientPresenter.toHttp(result.value.patient) };

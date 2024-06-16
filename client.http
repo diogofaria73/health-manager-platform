@@ -1,15 +1,13 @@
 @baseUrl = http://localhost:3001
-@authToken = {{authenticate.response.body.access_token}}
-###
-
+## @authToken = {{authenticate.response.body.access_token}}
 ###
 # @name create-patient
 POST {{baseUrl}}/patients/create
 Content-Type: application/json
 
 {
-  "name": "Rodriguinho Carlos Rodriguies",
-  "email": "diogofaria1290@gmail.com",
+  "name": "asdfasfdasfasfasfdasfd Carlos Rodriguies",
+  "email": "fffffasdfasdfasdfasfdasdfasdfasdfasdfasdf@gmail.com",
   "phone": "+55 11 99999-1528",
   "isActive": true
 }
@@ -19,34 +17,20 @@ Content-Type: application/json
 GET {{baseUrl}}/patient/list-all
 
 ###
-# @name list-users-by-email
-POST  {{baseUrl}}/users/list-by-email
+# @name list-patient-by-email
+POST  {{baseUrl}}/patient/list-by-email
 Content-Type: application/json
-Authorization: Bearer {{authToken}}
 
 {
   "email": "diogofaria073@gmail.com"
 }
 
 ###
-# @name authenticate
-POST {{baseUrl}}/sessions/create
+
+# @name list-patient-by-id
+POST  {{baseUrl}}/patient/list-by-id
 Content-Type: application/json
 
 {
-  "email": "diogofaria0w1@gmail.com",
-  "password": "fadababaca"
-}
-
-###
-# @name update-user
-PUT {{baseUrl}}/users/update
-Content-Type: application/json
-Authorization: Bearer {{authToken}}
-
-{
-  "id":"c058b844-5f98-44ea-b268-eddf3d8fc372",
-  "name": "JAO VINTE3 Lima - Taysa Lima Garcia",
-  "email": "jaoXXIII@gmail.com",
-  "isActive": true
+  "id": "e50e8913-4812-452d-bff7-55b28c3fa715"
 }
