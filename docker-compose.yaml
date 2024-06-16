@@ -1,0 +1,13 @@
+version: '3'
+services:
+  health-management-api:
+    image: bitnami/postgresql:latest
+    environment:
+      - POSTGRESQL_USERNAME=admin
+      - POSTGRESQL_PASSWORD=admin
+      - POSTGRESQL_DATABASE=health-manager-api
+      - PGDATA=/bitnami/postgresql/data/pgdata
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data:/bitnami/postgresql/data%
