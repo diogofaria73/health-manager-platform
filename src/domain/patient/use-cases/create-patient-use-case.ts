@@ -1,7 +1,7 @@
 import { Either, left, right } from '@/core/either';
-import { PatientAbstractRepository } from '../contracts/patient-abstract-repository';
+import { CreatePatientAbstractRepository } from '../contracts/create-patient-abstract-repository';
 import { PatientEntity } from '../entities/patient-entity';
-import { UserAlreadyExistsErrorMessage } from './error-messages/patient-already-exists-error-message';
+import { PatientAlreadyExistsError } from './error-messages/patient-already-exists-error-message';
 import { Injectable } from '@nestjs/common';
 
 interface CreatePatientUseCaseRequest {
@@ -12,7 +12,7 @@ interface CreatePatientUseCaseRequest {
 }
 
 type createPatientUseCaseResponse = Either<
-  UserAlreadyExistsErrorMessage,
+  PatientAlreadyExistsError,
   {
     patient: PatientEntity;
   }
@@ -20,17 +20,20 @@ type createPatientUseCaseResponse = Either<
 
 @Injectable()
 export class CreatePatientUseCase {
-  constructor(private readonly patientRepository: PatientAbstractRepository) {}
+  constructor(
+    private readonly patientRepository: CreatePatientAbstractRepository,
+  ) {}
 
   async execute(
     data: CreatePatientUseCaseRequest,
   ): Promise<createPatientUseCaseResponse> {
-    const patientAlreadyExists = await this.patientRepository.findByEmail(
-      data.email,
-    );
+    const { email } = data;
+
+    const patientAlreadyExists =
+      await this.patientRepository.findByEmail(email);
 
     if (patientAlreadyExists) {
-      return left(new UserAlreadyExistsErrorMessage(data.email));
+      return left(new PatientAlreadyExistsError(data.email));
     }
 
     const patient = PatientEntity.create({

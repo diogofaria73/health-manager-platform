@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:3000
+@baseUrl = http://localhost:3001
 @authToken = {{authenticate.response.body.access_token}}
 ###
 
@@ -8,14 +8,15 @@ POST {{baseUrl}}/patients/create
 Content-Type: application/json
 
 {
-  "name": "Luiz Carlos Augusto Diogo",
-  "email": "diogofaria073@gmail.com",
-  "password": "fadababaca"
+  "name": "Rodriguinho Carlos Rodriguies",
+  "email": "diogofaria1290@gmail.com",
+  "phone": "+55 11 99999-1528",
+  "isActive": true
 }
 
 ###
-# @name list-users
-GET {{baseUrl}}/users/list
+# @name list-patients
+GET {{baseUrl}}/patient/list-all
 
 ###
 # @name list-users-by-email

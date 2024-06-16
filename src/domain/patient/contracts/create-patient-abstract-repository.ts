@@ -1,6 +1,6 @@
 import { PatientEntity } from '../entities/patient-entity';
 
-export abstract class PatientAbstractRepository {
+export abstract class CreatePatientAbstractRepository {
   abstract create(patient: PatientEntity): Promise<PatientEntity>;
   abstract findAll(): Promise<PatientEntity[]>;
   abstract findByEmail(email: string): Promise<PatientEntity | null>;

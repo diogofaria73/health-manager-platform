@@ -24,3 +24,15 @@ model Patient {
 
   @@map("patients")
 }
+
+model HealthUnity {
+  id        String   @id @default(cuid())
+  name      String
+  address   String
+  phone     String
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("health_unities")
+}
