@@ -1,5 +1,7 @@
 @baseUrl = http://localhost:3001
 ## @authToken = {{authenticate.response.body.access_token}}
+
+
 ###
 # @name create-patient
 POST {{baseUrl}}/patients/create
@@ -7,7 +9,20 @@ Content-Type: application/json
 
 {
   "name": "asdfasfdasfasfasfdasfd Carlos Rodriguies",
-  "email": "fffffasdfasdfasdfasfdasdfasdfasdfasdfasdf@gmail.com",
+  "email": "ccccccccccc@gmail.com",
+  "phone": "+55 11 99999-1528",
+  "isActive": true
+}
+
+###
+# @name update-patient
+POST {{baseUrl}}/patients/update
+Content-Type: application/json
+
+{
+  "id":"83a68441-ce31-49ec-a11c-65ee7c69c76a",
+  "name": "RENATO2222 GARILHO ROMÁRIO",
+  "email": "renato2_garilho@gmail.com",
   "phone": "+55 11 99999-1528",
   "isActive": true
 }
@@ -27,10 +42,6 @@ Content-Type: application/json
 
 ###
 
-# @name list-patient-by-id
-POST  {{baseUrl}}/patient/list-by-id
+# @name delete-patient-by-id
+DELETE   {{baseUrl}}/patient/delete/b145663c-df96-4ffc-a42e-1cebb9113393
 Content-Type: application/json
-
-{
-  "id": "e50e8913-4812-452d-bff7-55b28c3fa715"
-}

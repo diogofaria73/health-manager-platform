@@ -3,6 +3,7 @@ import { PatientEntity } from '@/domain/patient/entities/patient-entity';
 import { PatientDataStructureMapper } from '../../mappers/patient-mapper';
 import { Injectable } from '@nestjs/common';
 import { UpdateAndDeleteAbstractRepository } from '@/domain/patient/contracts/update-and-delete-abstract-repository';
+import { UpdatePatientEntity } from '@/domain/patient/entities/update-patient-entity';
 
 @Injectable()
 export class UpdateAndDeleteConcreteRepository
@@ -19,21 +20,21 @@ export class UpdateAndDeleteConcreteRepository
     return PatientDataStructureMapper.fromPersistanceToDomain(patient);
   }
 
-  async update(patient: PatientEntity): Promise<PatientEntity> {
+  async update(patient: UpdatePatientEntity): Promise<PatientEntity> {
     const { id } = patient;
 
-    //  const updated_patient = await this.prisma.patient.update({
-    //    data: {
-    //      name: patient.name,
-    //      email: patient.email,
-    //      phone: patient.phone,
-    //      isActive: patient.isActive,
-    //    },
-    //    where: {
-    //      id: id,
-    //    },
-    //  });
+    const patientUpdated = await this.prisma.patient.update({
+      where: {
+        id: id,
+      },
+      data: {
+        name: patient.name,
+        email: patient.email,
+        phone: patient.phone,
+        isActive: patient.isActive,
+      },
+    });
 
-    throw new Error('Method not implemented.');
+    return PatientDataStructureMapper.fromPersistanceToDomain(patientUpdated);
   }
 }

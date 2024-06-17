@@ -2,15 +2,15 @@ import { PatientsNotFound } from '@/domain/patient/use-cases/error-messages/pati
 import {
   BadRequestException,
   Controller,
+  Delete,
   NotFoundException,
   Param,
-  Post,
   UsePipes,
 } from '@nestjs/common';
 import { PatientPresenter } from '../presenter/patient-data-presenter';
 import { ZodPipeValidator } from '@/infra/utils/pipes/zod-pipe-validator';
-import { ListPatientByIdUseCase } from '@/domain/patient/use-cases/list-patients-by-id-use-case';
 import { z } from 'zod';
+import { DeletePatientUseCase } from '@/domain/patient/use-cases/delete-patient-use-case';
 
 const patientParamSchema = z.object({
   id: z.string().uuid(),
@@ -20,15 +20,13 @@ type PatientParamSchema = z.infer<typeof patientParamSchema>;
 
 @Controller('patient')
 @UsePipes(new ZodPipeValidator(patientParamSchema))
-export class ListPatientByIdController {
-  constructor(
-    private readonly listPatientByIdUseCase: ListPatientByIdUseCase,
-  ) {}
+export class DeletePatientController {
+  constructor(private readonly deletePatientUseCase: DeletePatientUseCase) {}
 
-  @Post('list-by-id')
+  @Delete('delete/:id')
   async handle(@Param() params: PatientParamSchema) {
     const { id } = params;
-    const result = await this.listPatientByIdUseCase.execute(id);
+    const result = await this.deletePatientUseCase.execute(id);
 
     if (result.isLeft()) {
       const error = result.value;

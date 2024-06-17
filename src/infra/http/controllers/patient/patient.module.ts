@@ -14,6 +14,10 @@ import { ListPatientByEmailUseCase } from '@/domain/patient/use-cases/list-patie
 import { ListPatientByIdUseCase } from '@/domain/patient/use-cases/list-patients-by-id-use-case';
 import { ListPatientByEmailController } from './actions/list-patient-by-email-controller';
 import { ListPatientByIdController } from './actions/list-patient-by-id-controller';
+import { DeletePatientController } from './actions/delete-patient-by-id-controller';
+import { DeletePatientUseCase } from '@/domain/patient/use-cases/delete-patient-use-case';
+import { UpdatePatientUseCase } from '@/domain/patient/use-cases/updated-patient-use-case';
+import { UpdatePatientController } from './actions/update-patient-controller';
 
 @Module({
   imports: [DatabaseModule],
@@ -22,12 +26,16 @@ import { ListPatientByIdController } from './actions/list-patient-by-id-controll
     ListAllPatientsController,
     ListPatientByEmailController,
     ListPatientByIdController,
+    DeletePatientController,
+    UpdatePatientController,
   ],
   providers: [
     CreatePatientUseCase,
     ListAllPatientsUseCase,
     ListPatientByEmailUseCase,
     ListPatientByIdUseCase,
+    DeletePatientUseCase,
+    UpdatePatientUseCase,
     CreatePatientConcreteRepository,
     {
       provide: CreatePatientAbstractRepository,
