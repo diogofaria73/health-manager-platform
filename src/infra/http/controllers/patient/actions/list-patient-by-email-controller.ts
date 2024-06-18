@@ -3,7 +3,6 @@ import {
   BadRequestException,
   Body,
   Controller,
-  Get,
   NotFoundException,
   Post,
   UsePipes,

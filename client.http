@@ -53,7 +53,18 @@ Content-Type: application/json
 
 {
   "name": "Taysa Garcia Faria",
-  "email": "diogo.2222@gmail.com",
+  "email": "ronaldoLima.2222@gmail.com",
   "password": "123456",
-  "roles": ["ADMIN"]
+  "roles": ["ADMIN", "BASIC"]
 }
+
+###
+# @name list-all-users
+GET {{baseUrl}}/users/list-all
+Content-Type: application/json
+
+
+###
+# @name delete-user-by-id
+DELETE   {{baseUrl}}/user/delete/146ee11b-b598-49d8-9669-8c8af7ed49ba
+Content-Type: application/json

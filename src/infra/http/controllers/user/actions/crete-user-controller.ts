@@ -44,6 +44,6 @@ export class CreateUserController {
       }
     }
 
-    return { user: result.value.user };
+    return { user_created: result.value.user };
   }
 }

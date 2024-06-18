@@ -47,6 +47,6 @@ export class CreatePatientController {
           return new BadRequestException(error.message);
       }
     }
-    return { patient: PatientPresenter.toHttp(result.value.patient) };
+    return { patient_created: PatientPresenter.toHttp(result.value.patient) };
   }
 }

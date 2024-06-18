@@ -41,6 +41,6 @@ export class DeletePatientController {
 
     const patient = result.value.patient;
 
-    return { patient: PatientPresenter.toHttp(patient) };
+    return { patient_deleted: PatientPresenter.toHttp(patient) };
   }
 }

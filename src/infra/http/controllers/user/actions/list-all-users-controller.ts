@@ -1,22 +1,20 @@
 import { PatientsNotFound } from '@/domain/patient/use-cases/error-messages/patients-not-found-error-message';
-import { ListAllPatientsUseCase } from '@/domain/patient/use-cases/list-all-patients-use-case';
+import { ListAllUsersUseCase } from '@/domain/user/use-cases/list-all-users-use-case';
 import {
   BadRequestException,
   Controller,
   Get,
   NotFoundException,
 } from '@nestjs/common';
-import { PatientPresenter } from '../presenter/patient-data-presenter';
+import { userPresenter } from '../presenter/user-data-presenter';
 
-@Controller('patient')
-export class ListAllPatientsController {
-  constructor(
-    private readonly listAllPatientsUseCase: ListAllPatientsUseCase,
-  ) {}
+@Controller('users')
+export class ListAllUsersController {
+  constructor(private readonly listAllUsersUseCase: ListAllUsersUseCase) {}
 
   @Get('list-all')
   async handle() {
-    const result = await this.listAllPatientsUseCase.execute();
+    const result = await this.listAllUsersUseCase.execute();
 
     if (result.isLeft()) {
       const error = result.value;
@@ -29,8 +27,8 @@ export class ListAllPatientsController {
       }
     }
 
-    const patients = result.value.patient;
+    const users = result.value.users;
 
-    return { patient_list: patients.map(PatientPresenter.toHttp) };
+    return { users_list: users.map(userPresenter.toHttp) };
   }
 }
