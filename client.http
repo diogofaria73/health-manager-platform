@@ -45,3 +45,15 @@ Content-Type: application/json
 # @name delete-patient-by-id
 DELETE   {{baseUrl}}/patient/delete/b145663c-df96-4ffc-a42e-1cebb9113393
 Content-Type: application/json
+
+###
+# @name create-user
+POST {{baseUrl}}/users/create
+Content-Type: application/json
+
+{
+  "name": "Taysa Garcia Faria",
+  "email": "diogo.2222@gmail.com",
+  "password": "123456",
+  "roles": ["ADMIN"]
+}
