@@ -7,8 +7,8 @@ POST  {{baseUrl}}/authenticate/create-session
 Content-Type: application/json
 
 {
-  "email": "submarino@gmail.com",
-  "password": "123456"
+  "email": "diogofaria128@gmail.com",
+  "password": "fadababaca"
 }
 
 
@@ -62,9 +62,9 @@ POST {{baseUrl}}/users/create
 Content-Type: application/json
 
 {
-  "name": "Taysa Garcia Faria",
-  "email": "submarino@gmail.com",
-  "password": "123456",
+  "name": "Diogo Martins Almeida Faria",
+  "email": "diogofaria128@gmail.com",
+  "password": "fadababaca",
   "roles": ["ADMIN", "BASIC"]
 }
 
