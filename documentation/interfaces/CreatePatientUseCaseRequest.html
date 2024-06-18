@@ -313,10 +313,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Either, left, right } from &#x27;@/core/either&#x27;;
-import { PatientAbstractRepository } from &#x27;../contracts/patient-abstract-repository&#x27;;
+import { CreatePatientAbstractRepository } from &#x27;../contracts/create-patient-abstract-repository&#x27;;
 import { PatientEntity } from &#x27;../entities/patient-entity&#x27;;
-import { UserAlreadyExistsErrorMessage } from &#x27;./error-messages/patient-already-exists-error-message&#x27;;
+import { PatientAlreadyExistsError } from &#x27;./error-messages/patient-already-exists-error-message&#x27;;
 import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { ListPatientAbstractRepository } from &#x27;../contracts/list-patient-abstract-repository&#x27;;
 
 interface CreatePatientUseCaseRequest {
   name: string;
@@ -326,7 +327,7 @@ interface CreatePatientUseCaseRequest {
 }
 
 type createPatientUseCaseResponse &#x3D; Either&lt;
-  UserAlreadyExistsErrorMessage,
+  PatientAlreadyExistsError,
   {
     patient: PatientEntity;
   }
@@ -334,17 +335,21 @@ type createPatientUseCaseResponse &#x3D; Either&lt;
 
 @Injectable()
 export class CreatePatientUseCase {
-  constructor(private readonly patientRepository: PatientAbstractRepository) {}
+  constructor(
+    private readonly createPatientAbstractRepository: CreatePatientAbstractRepository,
+    private readonly listPatientAbstractRepository: ListPatientAbstractRepository,
+  ) {}
 
   async execute(
     data: CreatePatientUseCaseRequest,
   ): Promise&lt;createPatientUseCaseResponse&gt; {
-    const patientAlreadyExists &#x3D; await this.patientRepository.findByEmail(
-      data.email,
-    );
+    const { email } &#x3D; data;
+
+    const patientAlreadyExists &#x3D;
+      await this.listPatientAbstractRepository.listByEmail(email);
 
     if (patientAlreadyExists) {
-      return left(new UserAlreadyExistsErrorMessage(data.email));
+      return left(new PatientAlreadyExistsError(email));
     }
 
     const patient &#x3D; PatientEntity.create({
@@ -354,7 +359,7 @@ export class CreatePatientUseCase {
       isActive: data.isActive,
     });
 
-    const result &#x3D; await this.patientRepository.create(patient);
+    const result &#x3D; await this.createPatientAbstractRepository.create(patient);
 
     return right({ patient: result });
   }

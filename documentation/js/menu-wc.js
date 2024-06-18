@@ -59,16 +59,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                             </li>
                             <li class="link">
+                                <a href="modules/AuthModule.html" data-type="entity-link" >AuthModule</a>
+                            </li>
+                            <li class="link">
                                 <a href="modules/DatabaseModule.html" data-type="entity-link" >DatabaseModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                        'data-bs-target="#injectables-links-module-DatabaseModule-d2ff5f42886e20cb3226261974e9310499d9be784795dc01cb87d079e152627cb7961ee9767ed7ee1080e8c6a8c0ecefab29e35d9d8a1cfb90fd67e87a115ad4"' : 'data-bs-target="#xs-injectables-links-module-DatabaseModule-d2ff5f42886e20cb3226261974e9310499d9be784795dc01cb87d079e152627cb7961ee9767ed7ee1080e8c6a8c0ecefab29e35d9d8a1cfb90fd67e87a115ad4"' }>
+                                        'data-bs-target="#injectables-links-module-DatabaseModule-059775472d2b0a6e7cac47adbcc94b8b7a4f71067e54b2eb89a4b83f91b3d5b22f5dbc98393b8be1b4427b7bb3af2b71a94e0bd69fd8b8846962ac3f14708d25"' : 'data-bs-target="#xs-injectables-links-module-DatabaseModule-059775472d2b0a6e7cac47adbcc94b8b7a4f71067e54b2eb89a4b83f91b3d5b22f5dbc98393b8be1b4427b7bb3af2b71a94e0bd69fd8b8846962ac3f14708d25"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-DatabaseModule-d2ff5f42886e20cb3226261974e9310499d9be784795dc01cb87d079e152627cb7961ee9767ed7ee1080e8c6a8c0ecefab29e35d9d8a1cfb90fd67e87a115ad4"' :
-                                        'id="xs-injectables-links-module-DatabaseModule-d2ff5f42886e20cb3226261974e9310499d9be784795dc01cb87d079e152627cb7961ee9767ed7ee1080e8c6a8c0ecefab29e35d9d8a1cfb90fd67e87a115ad4"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-DatabaseModule-059775472d2b0a6e7cac47adbcc94b8b7a4f71067e54b2eb89a4b83f91b3d5b22f5dbc98393b8be1b4427b7bb3af2b71a94e0bd69fd8b8846962ac3f14708d25"' :
+                                        'id="xs-injectables-links-module-DatabaseModule-059775472d2b0a6e7cac47adbcc94b8b7a4f71067e54b2eb89a4b83f91b3d5b22f5dbc98393b8be1b4427b7bb3af2b71a94e0bd69fd8b8846962ac3f14708d25"' }>
                                         <li class="link">
                                             <a href="injectables/PrismaService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PrismaService</a>
                                         </li>
@@ -82,29 +85,132 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/PatientModule.html" data-type="entity-link" >PatientModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                            'data-bs-target="#controllers-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' : 'data-bs-target="#xs-controllers-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' }>
+                                            'data-bs-target="#controllers-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' : 'data-bs-target="#xs-controllers-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' }>
                                             <span class="icon ion-md-swap"></span>
                                             <span>Controllers</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' :
-                                            'id="xs-controllers-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' :
+                                            'id="xs-controllers-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' }>
                                             <li class="link">
                                                 <a href="controllers/CreatePatientController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CreatePatientController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/DeletePatientController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DeletePatientController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/ListAllPatientsController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListAllPatientsController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/ListPatientByEmailController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListPatientByEmailController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/ListPatientByIdController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListPatientByIdController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/UpdatePatientController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UpdatePatientController</a>
                                             </li>
                                         </ul>
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                        'data-bs-target="#injectables-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' : 'data-bs-target="#xs-injectables-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' }>
+                                        'data-bs-target="#injectables-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' : 'data-bs-target="#xs-injectables-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' :
-                                        'id="xs-injectables-links-module-PatientModule-d9240f5eda0a77fb2cd58096ddbbb469d93f0613d895ea07f0c364687b46fc48dedfdfad32483fb5ba4706ed4ff0223ebfdf20852288b3ee297297d9abe9581f"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' :
+                                        'id="xs-injectables-links-module-PatientModule-b1e7176c3c651046b73a733eeb616940e32b64b54f9539fc500367f4ba241f9eecf5db24b11f257cc33f547c60229ac281bcb10c9bb9aa08c01aac0f33cc0f06"' }>
+                                        <li class="link">
+                                            <a href="injectables/CreatePatientConcreteRepository.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CreatePatientConcreteRepository</a>
+                                        </li>
                                         <li class="link">
                                             <a href="injectables/CreatePatientUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CreatePatientUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/DeletePatientUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DeletePatientUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListAllPatientsUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListAllPatientsUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListPatientByEmailUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListPatientByEmailUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListPatientByIdUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListPatientByIdUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListPatientsConcreteRepository.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListPatientsConcreteRepository</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/UpdateAndDeleteConcreteRepository.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UpdateAndDeleteConcreteRepository</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/UpdatePatientUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UpdatePatientUseCase</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/UserModule.html" data-type="entity-link" >UserModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#controllers-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' : 'data-bs-target="#xs-controllers-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' }>
+                                            <span class="icon ion-md-swap"></span>
+                                            <span>Controllers</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' :
+                                            'id="xs-controllers-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' }>
+                                            <li class="link">
+                                                <a href="controllers/CreateUserController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CreateUserController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/DeleteUserController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DeleteUserController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/ListAllUsersController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListAllUsersController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/ListUserByEmailController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListUserByEmailController</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="controllers/ListUserByIdController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListUserByIdController</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
+                                        'data-bs-target="#injectables-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' : 'data-bs-target="#xs-injectables-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' :
+                                        'id="xs-injectables-links-module-UserModule-0673138d572722c02d5c2b0120cbede4e41f7ed931e8ec479eac998efed84291876800ed9500d7a72dee911030cfc6d2459279b326726d25d9faa68dcac0badd"' }>
+                                        <li class="link">
+                                            <a href="injectables/CreateUserConcreteRepository.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CreateUserConcreteRepository</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/CreateUserUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CreateUserUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/DeleteUserUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DeleteUserUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListAllUsersUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListAllUsersUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListUserByEmailUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListUserByEmailUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListUserByIdUseCase.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListUserByIdUseCase</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ListUserConcreteRepository.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListUserConcreteRepository</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/UpdateAndDeleteConcreteRepository.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >UpdateAndDeleteConcreteRepository</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -123,6 +229,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/AggregateRoot.html" data-type="entity-link" >AggregateRoot</a>
                             </li>
                             <li class="link">
+                                <a href="classes/CreatePatientAbstractRepository.html" data-type="entity-link" >CreatePatientAbstractRepository</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/CreateUserAbstractRepository.html" data-type="entity-link" >CreateUserAbstractRepository</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/DomainEvents.html" data-type="entity-link" >DomainEvents</a>
                             </li>
                             <li class="link">
@@ -132,19 +244,28 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Left.html" data-type="entity-link" >Left</a>
                             </li>
                             <li class="link">
+                                <a href="classes/ListPatientAbstractRepository.html" data-type="entity-link" >ListPatientAbstractRepository</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ListUserAbstractRepository.html" data-type="entity-link" >ListUserAbstractRepository</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/NotAllowedError.html" data-type="entity-link" >NotAllowedError</a>
                             </li>
                             <li class="link">
-                                <a href="classes/PatientAbstractRepository.html" data-type="entity-link" >PatientAbstractRepository</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/PatientConcreteRepository.html" data-type="entity-link" >PatientConcreteRepository</a>
+                                <a href="classes/PatientAlreadyExistsError.html" data-type="entity-link" >PatientAlreadyExistsError</a>
                             </li>
                             <li class="link">
                                 <a href="classes/PatientDataStructureMapper.html" data-type="entity-link" >PatientDataStructureMapper</a>
                             </li>
                             <li class="link">
                                 <a href="classes/PatientEntity.html" data-type="entity-link" >PatientEntity</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PatientPresenter.html" data-type="entity-link" >PatientPresenter</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PatientsNotFound.html" data-type="entity-link" >PatientsNotFound</a>
                             </li>
                             <li class="link">
                                 <a href="classes/ResourceNotFoundError.html" data-type="entity-link" >ResourceNotFoundError</a>
@@ -156,7 +277,28 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/UniqueEntityID.html" data-type="entity-link" >UniqueEntityID</a>
                             </li>
                             <li class="link">
-                                <a href="classes/UserAlreadyExistsErrorMessage.html" data-type="entity-link" >UserAlreadyExistsErrorMessage</a>
+                                <a href="classes/UpdateAndDeleteAbstractRepository.html" data-type="entity-link" >UpdateAndDeleteAbstractRepository</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/UpdateAndDeleteUserAbstractRepository.html" data-type="entity-link" >UpdateAndDeleteUserAbstractRepository</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/UserAlreadyExistsError.html" data-type="entity-link" >UserAlreadyExistsError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/UserDataStructureMapper.html" data-type="entity-link" >UserDataStructureMapper</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/UserEntity.html" data-type="entity-link" >UserEntity</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/UserPresenter.html" data-type="entity-link" >UserPresenter</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/UsersNotFound.html" data-type="entity-link" >UsersNotFound</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ZodPipeValidator.html" data-type="entity-link" >ZodPipeValidator</a>
                             </li>
                         </ul>
                     </li>
@@ -169,7 +311,55 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
+                                    <a href="injectables/CreatePatientConcreteRepository.html" data-type="entity-link" >CreatePatientConcreteRepository</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/CreatePatientUseCase.html" data-type="entity-link" >CreatePatientUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/CreateUserConcreteRepository.html" data-type="entity-link" >CreateUserConcreteRepository</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/CreateUserUseCase.html" data-type="entity-link" >CreateUserUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/DeletePatientUseCase.html" data-type="entity-link" >DeletePatientUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/DeleteUserUseCase.html" data-type="entity-link" >DeleteUserUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListAllPatientsUseCase.html" data-type="entity-link" >ListAllPatientsUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListAllUsersUseCase.html" data-type="entity-link" >ListAllUsersUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListPatientByEmailUseCase.html" data-type="entity-link" >ListPatientByEmailUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListPatientByIdUseCase.html" data-type="entity-link" >ListPatientByIdUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListPatientsConcreteRepository.html" data-type="entity-link" >ListPatientsConcreteRepository</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListUserByEmailUseCase.html" data-type="entity-link" >ListUserByEmailUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListUserByIdUseCase.html" data-type="entity-link" >ListUserByIdUseCase</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ListUserConcreteRepository.html" data-type="entity-link" >ListUserConcreteRepository</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/UpdateAndDeleteConcreteRepository.html" data-type="entity-link" >UpdateAndDeleteConcreteRepository</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/UpdateAndDeleteUserConcreteRepository.html" data-type="entity-link" >UpdateAndDeleteUserConcreteRepository</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/UpdatePatientUseCase.html" data-type="entity-link" >UpdatePatientUseCase</a>
                                 </li>
                             </ul>
                         </li>
@@ -185,6 +375,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/CreatePatientUseCaseRequest.html" data-type="entity-link" >CreatePatientUseCaseRequest</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/CreateUserUseCaseRequest.html" data-type="entity-link" >CreateUserUseCaseRequest</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/DomainEvent.html" data-type="entity-link" >DomainEvent</a>
                             </li>
                             <li class="link">
@@ -197,7 +390,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/PatientProps.html" data-type="entity-link" >PatientProps</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/UpdatePatientEntity.html" data-type="entity-link" >UpdatePatientEntity</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/UpdatePatientUseCaseRequest.html" data-type="entity-link" >UpdatePatientUseCaseRequest</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/UpdateUserEntity.html" data-type="entity-link" >UpdateUserEntity</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/UseCaseError.html" data-type="entity-link" >UseCaseError</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/UserProps.html" data-type="entity-link" >UserProps</a>
                             </li>
                         </ul>
                     </li>

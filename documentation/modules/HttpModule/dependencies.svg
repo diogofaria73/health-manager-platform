@@ -22,41 +22,53 @@
 <text text-anchor="start" x="429.73" y="-15.4" font-family="Times-12" font-size="14.00"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_HttpModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="118.5,-70 118.5,-195 377.5,-195 377.5,-70 118.5,-70"/>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="66.5,-70 66.5,-195 429.5,-195 429.5,-70 66.5,-70"/>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_HttpModule_imports</title>
-<polygon fill="none" stroke="black" points="126.5,-78 126.5,-130 369.5,-130 369.5,-78 126.5,-78"/>
+<polygon fill="none" stroke="black" points="74.5,-78 74.5,-130 421.5,-130 421.5,-78 74.5,-78"/>
 </g>
 <!-- DatabaseModule -->
 <g id="node1" class="node">
 <title>DatabaseModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="361.85,-122 358.85,-126 337.85,-126 334.85,-122 251.15,-122 251.15,-86 361.85,-86 361.85,-122"/>
-<text text-anchor="middle" x="306.5" y="-99.8" font-family="Times,serif" font-size="14.00">DatabaseModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="413.85,-122 410.85,-126 389.85,-126 386.85,-122 303.15,-122 303.15,-86 413.85,-86 413.85,-122"/>
+<text text-anchor="middle" x="358.5" y="-99.8" font-family="Times,serif" font-size="14.00">DatabaseModule</text>
 </g>
 <!-- HttpModule -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>HttpModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="286.94,-187 283.94,-191 262.94,-191 259.94,-187 202.06,-187 202.06,-151 286.94,-151 286.94,-187"/>
-<text text-anchor="middle" x="244.5" y="-164.8" font-family="Times,serif" font-size="14.00">HttpModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="277.94,-187 274.94,-191 253.94,-191 250.94,-187 193.06,-187 193.06,-151 277.94,-151 277.94,-187"/>
+<text text-anchor="middle" x="235.5" y="-164.8" font-family="Times,serif" font-size="14.00">HttpModule</text>
 </g>
 <!-- DatabaseModule&#45;&gt;HttpModule -->
 <g id="edge1" class="edge">
 <title>DatabaseModule&#45;&gt;HttpModule</title>
-<path fill="none" stroke="black" d="M268.9,-122.11C268.9,-122.11 268.9,-140.99 268.9,-140.99"/>
-<polygon fill="black" stroke="black" points="265.4,-140.99 268.9,-150.99 272.4,-140.99 265.4,-140.99"/>
+<path fill="none" stroke="black" d="M358.5,-122.11C358.5,-141.34 358.5,-169 358.5,-169 358.5,-169 287.83,-169 287.83,-169"/>
+<polygon fill="black" stroke="black" points="287.83,-165.5 277.83,-169 287.83,-172.5 287.83,-165.5"/>
 </g>
 <!-- PatientModule -->
 <g id="node2" class="node">
 <title>PatientModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="232.93,-122 229.93,-126 208.93,-126 205.93,-122 134.07,-122 134.07,-86 232.93,-86 232.93,-122"/>
-<text text-anchor="middle" x="183.5" y="-99.8" font-family="Times,serif" font-size="14.00">PatientModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="284.93,-122 281.93,-126 260.93,-126 257.93,-122 186.07,-122 186.07,-86 284.93,-86 284.93,-122"/>
+<text text-anchor="middle" x="235.5" y="-99.8" font-family="Times,serif" font-size="14.00">PatientModule</text>
 </g>
 <!-- PatientModule&#45;&gt;HttpModule -->
 <g id="edge2" class="edge">
 <title>PatientModule&#45;&gt;HttpModule</title>
-<path fill="none" stroke="black" d="M217.5,-122.11C217.5,-122.11 217.5,-140.99 217.5,-140.99"/>
-<polygon fill="black" stroke="black" points="214,-140.99 217.5,-150.99 221,-140.99 214,-140.99"/>
+<path fill="none" stroke="black" d="M235.5,-122.11C235.5,-122.11 235.5,-140.99 235.5,-140.99"/>
+<polygon fill="black" stroke="black" points="232,-140.99 235.5,-150.99 239,-140.99 232,-140.99"/>
+</g>
+<!-- UserModule -->
+<g id="node3" class="node">
+<title>UserModule</title>
+<polygon fill="#8dd3c7" stroke="black" points="168.48,-122 165.48,-126 144.48,-126 141.48,-122 82.52,-122 82.52,-86 168.48,-86 168.48,-122"/>
+<text text-anchor="middle" x="125.5" y="-99.8" font-family="Times,serif" font-size="14.00">UserModule</text>
+</g>
+<!-- UserModule&#45;&gt;HttpModule -->
+<g id="edge3" class="edge">
+<title>UserModule&#45;&gt;HttpModule</title>
+<path fill="none" stroke="black" d="M125.5,-122.11C125.5,-141.34 125.5,-169 125.5,-169 125.5,-169 182.97,-169 182.97,-169"/>
+<polygon fill="black" stroke="black" points="182.97,-172.5 192.97,-169 182.97,-165.5 182.97,-172.5"/>
 </g>
 </g>
 </svg>

@@ -182,15 +182,15 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>fromDomainToPersistance(patient: <a href="../classes/PatientEntity.html" target="_self">PatientEntity</a>)</code>
+                    <code>fromDomainToPersistance(patient: DomainPatient)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">src/infra/databases/mappers/patient-mapper.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="21"
+                                    class="link-to-prism">src/infra/databases/mappers/patient-mapper.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -213,7 +213,7 @@
                                         <tr>
                                                 <td>patient</td>
                                             <td>
-                                                            <code><a href="../classes/PatientEntity.html" target="_self" >PatientEntity</a></code>
+                                                            <code><a href="../classes/PatientEntity.html" target="_self" >DomainPatient</a></code>
                                             </td>
 
                                             <td>
@@ -251,15 +251,15 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>fromPersistanceToDomain(raw: PatientPersistence)</code>
+                    <code>fromPersistanceToDomain(raw: PrismaPatient)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">src/infra/databases/mappers/patient-mapper.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="7"
+                                    class="link-to-prism">src/infra/databases/mappers/patient-mapper.ts:7</a></div>
                         </td>
                     </tr>
 
@@ -282,7 +282,7 @@
                                         <tr>
                                                 <td>raw</td>
                                             <td>
-                                                        <code>PatientPersistence</code>
+                                                        <code>PrismaPatient</code>
                                             </td>
 
                                             <td>
@@ -295,7 +295,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/PatientEntity.html" target="_self" >PatientEntity</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/PatientEntity.html" target="_self" >DomainPatient</a></code>
 
                         </div>
                             <div class="io-description">
@@ -316,23 +316,27 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Prisma } from &#x27;@prisma/client&#x27;;
-import { PatientEntity } from &#x27;@/domain/patient/entities/patient-entity&#x27;;
-import { Patient as PatientPersistence } from &#x27;@prisma/client&#x27;;
+import { PatientEntity as DomainPatient } from &#x27;@/domain/patient/entities/patient-entity&#x27;;
+import { Patient as PrismaPatient } from &#x27;@prisma/client&#x27;;
+import { UniqueEntityID } from &#x27;@/core/entities/unique-entity-id&#x27;;
 
 export class PatientDataStructureMapper {
-  static fromPersistanceToDomain(raw: PatientPersistence): PatientEntity {
-    const { name, email, phone, isActive } &#x3D; raw;
-
-    return PatientEntity.create({
-      name: name,
-      email: email,
-      phone: phone,
-      isActive: isActive,
-    });
+  static fromPersistanceToDomain(raw: PrismaPatient): DomainPatient {
+    return DomainPatient.create(
+      {
+        name: raw.name,
+        email: raw.email,
+        phone: raw.phone,
+        isActive: raw.isActive,
+        createdAt: raw.createdAt,
+        updatedAt: raw.updatedAt,
+      },
+      new UniqueEntityID(raw.id),
+    );
   }
 
   static fromDomainToPersistance(
-    patient: PatientEntity,
+    patient: DomainPatient,
   ): Prisma.PatientUncheckedCreateInput {
     return {
       id: patient.id.toString(),

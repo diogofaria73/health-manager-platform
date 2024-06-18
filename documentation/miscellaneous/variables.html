@@ -112,10 +112,40 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#createPatientBodySchema" title="src/infra/http/controllers/patient/actions/create-patient-controller.ts" ><b>createPatientBodySchema</b>&nbsp;&nbsp;&nbsp;(src/.../create-patient-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createPatientBodySchema" title="src/infra/http/controllers/patient/actions/list-patient-by-email-controller.ts" ><b>createPatientBodySchema</b>&nbsp;&nbsp;&nbsp;(src/.../list-patient-by-email-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createUserBodySchema" title="src/infra/http/controllers/user/actions/crete-user-controller.ts" ><b>createUserBodySchema</b>&nbsp;&nbsp;&nbsp;(src/.../crete-user-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteUserParamSchema" title="src/infra/http/controllers/user/actions/delete-user-by-id-controller.ts" ><b>deleteUserParamSchema</b>&nbsp;&nbsp;&nbsp;(src/.../delete-user-by-id-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#envSchema" title="src/core/configs/env.ts" ><b>envSchema</b>&nbsp;&nbsp;&nbsp;(src/.../env.ts)</a>
+                        </li>
+                        <li>
                             <a href="#left" title="src/core/either.ts" ><b>left</b>&nbsp;&nbsp;&nbsp;(src/.../either.ts)</a>
                         </li>
                         <li>
+                            <a href="#listUserByEmailBodySchema" title="src/infra/http/controllers/user/actions/list-user-by-email-controller.ts" ><b>listUserByEmailBodySchema</b>&nbsp;&nbsp;&nbsp;(src/.../list-user-by-email-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#listUserByIdParamSchema" title="src/infra/http/controllers/user/actions/list-user-by-id-controller.ts" ><b>listUserByIdParamSchema</b>&nbsp;&nbsp;&nbsp;(src/.../list-user-by-id-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patientParamSchema" title="src/infra/http/controllers/patient/actions/delete-patient-by-id-controller.ts" ><b>patientParamSchema</b>&nbsp;&nbsp;&nbsp;(src/.../delete-patient-by-id-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patientParamSchema" title="src/infra/http/controllers/patient/actions/list-patient-by-id-controller.ts" ><b>patientParamSchema</b>&nbsp;&nbsp;&nbsp;(src/.../list-patient-by-id-controller.ts)</a>
+                        </li>
+                        <li>
                             <a href="#right" title="src/core/either.ts" ><b>right</b>&nbsp;&nbsp;&nbsp;(src/.../either.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updatePatientBodySchema" title="src/infra/http/controllers/patient/actions/update-patient-controller.ts" ><b>updatePatientBodySchema</b>&nbsp;&nbsp;&nbsp;(src/.../update-patient-controller.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -124,6 +154,142 @@
     </table>
 </section>
 
+    <h3>src/infra/http/controllers/patient/actions/create-patient-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPatientBodySchema"></a>
+                    <span class="name">
+                        <span ><b>createPatientBodySchema</b></span>
+                        <a href="#createPatientBodySchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  name: z.string(),
+  email: z.string().email(),
+  phone: z.string(),
+  isActive: z.boolean(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/patient/actions/list-patient-by-email-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPatientBodySchema"></a>
+                    <span class="name">
+                        <span ><b>createPatientBodySchema</b></span>
+                        <a href="#createPatientBodySchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  email: z.string().email(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/user/actions/crete-user-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUserBodySchema"></a>
+                    <span class="name">
+                        <span ><b>createUserBodySchema</b></span>
+                        <a href="#createUserBodySchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  name: z.string(),
+  email: z.string().email(),
+  password: z.string(),
+  roles: z.array(z.string()),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/user/actions/delete-user-by-id-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUserParamSchema"></a>
+                    <span class="name">
+                        <span ><b>deleteUserParamSchema</b></span>
+                        <a href="#deleteUserParamSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  id: z.string().uuid() || z.string().cuid(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/core/configs/env.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="envSchema"></a>
+                    <span class="name">
+                        <span ><b>envSchema</b></span>
+                        <a href="#envSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  DATABASE_URL: z.string().url(),
+  PORT: z.string(),
+  JWT_SECRET: z.string(),
+  JWT_EXPIRES_IN: z.string().default(&#x27;1d&#x27;),
+  PRIVATE_KEY: z.string(),
+  PUBLIC_KEY: z.string(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
     <h3>src/core/either.ts</h3>
     <section data-compodoc="block-properties">
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -164,6 +330,135 @@
                         <i>Default value : </i><code>&lt;L, R&gt;(value: R): Either&lt;L, R&gt; &#x3D;&gt; {
   return new Right(value);
 }</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/user/actions/list-user-by-email-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listUserByEmailBodySchema"></a>
+                    <span class="name">
+                        <span ><b>listUserByEmailBodySchema</b></span>
+                        <a href="#listUserByEmailBodySchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  email: z.string().email(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/user/actions/list-user-by-id-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listUserByIdParamSchema"></a>
+                    <span class="name">
+                        <span ><b>listUserByIdParamSchema</b></span>
+                        <a href="#listUserByIdParamSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  id: z.string().uuid() || z.string().cuid(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/patient/actions/delete-patient-by-id-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientParamSchema"></a>
+                    <span class="name">
+                        <span ><b>patientParamSchema</b></span>
+                        <a href="#patientParamSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  id: z.string().uuid(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/patient/actions/list-patient-by-id-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientParamSchema"></a>
+                    <span class="name">
+                        <span ><b>patientParamSchema</b></span>
+                        <a href="#patientParamSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  id: z.string().uuid(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/infra/http/controllers/patient/actions/update-patient-controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatientBodySchema"></a>
+                    <span class="name">
+                        <span ><b>updatePatientBodySchema</b></span>
+                        <a href="#updatePatientBodySchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>z.object({
+  id: z.string().uuid(),
+  name: z.string(),
+  email: z.string().email(),
+  phone: z.string(),
+  isActive: z.boolean(),
+})</code>
                     </td>
                 </tr>
 

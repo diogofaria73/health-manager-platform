@@ -128,7 +128,7 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                            <code><a href="../classes/Entity.html" target="_self" >Entity</a></code>
+                            <code><a href="../classes/AggregateRoot.html" target="_self" >AggregateRoot</a></code>
             </p>
 
 
@@ -145,6 +145,10 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_domainEvents" >_domainEvents</a>
+                            </li>
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#_id" >_id</a>
@@ -168,6 +172,14 @@
                             <li>
                                     <span class="modifier">Static</span>
                                 <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#addDomainEvent" >addDomainEvent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#clearEvents" >clearEvents</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -201,6 +213,12 @@
                                 <li>
                                     <a href="#isActive" >isActive</a>
                                 </li>
+                                <li>
+                                    <a href="#createdAt" >createdAt</a>
+                                </li>
+                                <li>
+                                    <a href="#updatedAt" >updatedAt</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -214,6 +232,45 @@
     <h3 id="inputs">
         Properties
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_domainEvents"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_domainEvents</b></span>
+                        <a href="#_domainEvents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DomainEvent.html" target="_self" >DomainEvent[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/AggregateRoot.html" target="_self" >AggregateRoot</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/AggregateRoot.html#source" target="_self" >AggregateRoot:6</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -304,15 +361,15 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(props: <a href="../interfaces/PatientProps.html" target="_self">PatientProps</a>, id?: <a href="../classes/UniqueEntityID.html" target="_self">UniqueEntityID</a>)</code>
+                    <code>create(props: <a href="../interfaces/PatientProps.html" target="_self">Optional&lt;PatientProps | &quot;createdAt&quot; | &quot;updatedAt&quot;&gt;</a>, id?: <a href="../classes/UniqueEntityID.html" target="_self">UniqueEntityID</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/domain/patient/entities/patient-entity.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/domain/patient/entities/patient-entity.ts:51</a></div>
                         </td>
                     </tr>
 
@@ -335,7 +392,7 @@
                                         <tr>
                                                 <td>props</td>
                                             <td>
-                                                            <code><a href="../interfaces/PatientProps.html" target="_self" >PatientProps</a></code>
+                                                            <code><a href="../interfaces/PatientProps.html" target="_self" >Optional&lt;PatientProps | &quot;createdAt&quot; | &quot;updatedAt&quot;&gt;</a></code>
                                             </td>
 
                                             <td>
@@ -366,6 +423,126 @@
                             <div class="io-description">
                                 
                             </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addDomainEvent"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>addDomainEvent</b></span>
+                        <a href="#addDomainEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addDomainEvent(domainEvent: <a href="../interfaces/DomainEvent.html" target="_self">DomainEvent</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/AggregateRoot.html" target="_self" >AggregateRoot</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/AggregateRoot.html#source" target="_self" >AggregateRoot:12</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>domainEvent</td>
+                                            <td>
+                                                            <code><a href="../interfaces/DomainEvent.html" target="_self" >DomainEvent</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearEvents"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>clearEvents</b></span>
+                        <a href="#clearEvents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clearEvents()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../classes/AggregateRoot.html" target="_self" >AggregateRoot</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/AggregateRoot.html#source" target="_self" >AggregateRoot:17</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -471,7 +648,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:15</a></div>
                                 </td>
                             </tr>
 
@@ -482,7 +659,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:18</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -540,7 +717,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:22</a></div>
                                 </td>
                             </tr>
 
@@ -551,7 +728,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:25</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -609,7 +786,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:29</a></div>
                                 </td>
                             </tr>
 
@@ -620,7 +797,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:32</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -678,7 +855,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:36</a></div>
                                 </td>
                             </tr>
 
@@ -689,7 +866,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:39</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -731,23 +908,69 @@
                     </tr>
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createdAt"></a>
+                        <span class="name"><b>createdAt</b><a href="#createdAt"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>createdAt()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:43</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updatedAt"></a>
+                        <span class="name"><b>updatedAt</b><a href="#updatedAt"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>updatedAt()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/domain/patient/entities/patient-entity.ts:47</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
 </section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Entity } from &#x27;@/core/entities/entity&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AggregateRoot } from &#x27;@/core/entities/aggregate-root&#x27;;
 import { UniqueEntityID } from &#x27;@/core/entities/unique-entity-id&#x27;;
+import { Optional } from &#x27;@prisma/client/runtime/library&#x27;;
 
 export interface PatientProps {
-  // id: UniqueEntityID;
   name: string;
   email: string;
   phone: string;
   isActive: boolean;
+  createdAt: Date;
+  updatedAt?: Date | null;
 }
 
-export class PatientEntity extends Entity&lt;PatientProps&gt; {
+export class PatientEntity extends AggregateRoot&lt;PatientProps&gt; {
   get name(): string {
     return this.props.name;
   }
@@ -776,8 +999,26 @@ export class PatientEntity extends Entity&lt;PatientProps&gt; {
     this.props.isActive &#x3D; value;
   }
 
-  static create(props: PatientProps, id?: UniqueEntityID): PatientEntity {
-    const patient &#x3D; new PatientEntity(props, id);
+  get createdAt() {
+    return this.props.createdAt;
+  }
+
+  get updatedAt() {
+    return this.props.updatedAt;
+  }
+
+  static create(
+    props: Optional&lt;PatientProps, &#x27;createdAt&#x27; | &#x27;updatedAt&#x27;&gt;,
+    id?: UniqueEntityID,
+  ) {
+    const patient &#x3D; new PatientEntity(
+      {
+        ...props,
+        createdAt: props.createdAt ?? new Date(),
+        updatedAt: props.updatedAt ?? null,
+      },
+      id,
+    );
 
     return patient;
   }

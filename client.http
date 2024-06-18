@@ -1,6 +1,16 @@
 @baseUrl = http://localhost:3001
 ## @authToken = {{authenticate.response.body.access_token}}
 
+###
+# @name list-patient-by-email
+POST  {{baseUrl}}/authenticate/create-session
+Content-Type: application/json
+
+{
+  "email": "submarino@gmail.com",
+  "password": "123456"
+}
+
 
 ###
 # @name create-patient
@@ -53,7 +63,7 @@ Content-Type: application/json
 
 {
   "name": "Taysa Garcia Faria",
-  "email": "ronaldoLima.2222@gmail.com",
+  "email": "submarino@gmail.com",
   "password": "123456",
   "roles": ["ADMIN", "BASIC"]
 }

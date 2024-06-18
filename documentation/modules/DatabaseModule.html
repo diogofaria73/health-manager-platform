@@ -229,12 +229,11 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
 import { PrismaService } from &#x27;./service/prisma.service&#x27;;
-import { PatientConcreteRepository } from &#x27;../repositories/patient/patient-concrete-repository&#x27;;
 
 @Module({
   imports: [],
   controllers: [],
-  providers: [PrismaService, PatientConcreteRepository],
+  providers: [PrismaService],
   exports: [PrismaService],
 })
 export class DatabaseModule {}
