@@ -6,9 +6,11 @@ import {
   Get,
   NotFoundException,
   Param,
+  UsePipes,
 } from '@nestjs/common';
 import { z } from 'zod';
 import { UserPresenter } from '../presenter/user-data-presenter';
+import { ZodPipeValidator } from '@/infra/utils/pipes/zod-pipe-validator';
 
 const listUserByIdParamSchema = z.object({
   id: z.string().uuid() || z.string().cuid(),
@@ -17,6 +19,7 @@ const listUserByIdParamSchema = z.object({
 type ListUserByIdParamSchema = z.infer<typeof listUserByIdParamSchema>;
 
 @Controller('user')
+@UsePipes(new ZodPipeValidator(listUserByIdParamSchema))
 export class ListUserByIdController {
   constructor(private readonly listUserByIdUseCase: ListUserByIdUseCase) {}
 

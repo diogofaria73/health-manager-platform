@@ -6,9 +6,11 @@ import {
   Controller,
   Get,
   NotFoundException,
+  UsePipes,
 } from '@nestjs/common';
 import { z } from 'zod';
 import { UserPresenter } from '../presenter/user-data-presenter';
+import { ZodPipeValidator } from '@/infra/utils/pipes/zod-pipe-validator';
 
 const listUserByEmailBodySchema = z.object({
   email: z.string().email(),
@@ -17,6 +19,7 @@ const listUserByEmailBodySchema = z.object({
 type ListUserByEmailBodySchema = z.infer<typeof listUserByEmailBodySchema>;
 
 @Controller('user')
+@UsePipes(new ZodPipeValidator(listUserByEmailBodySchema))
 export class ListUserByEmailController {
   constructor(
     private readonly listUserByEmailUseCase: ListUserByEmailUseCase,
