@@ -1,6 +1,6 @@
 import { UserEntity } from '@/domain/user/entities/user-entity';
 
-export class userPresenter {
+export class UserPresenter {
   static toHttp(user: UserEntity) {
     return {
       id: user.id,

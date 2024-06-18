@@ -65,6 +65,24 @@ Content-Type: application/json
 
 
 ###
+# @name list-user-by-id
+GET   {{baseUrl}}/user/list-by-id/9a028549-1fe5-4d1b-9207-d99333cf93fe
+Content-Type: application/json
+
+###
+
+# @name list-user-by-email
+GET    {{baseUrl}}/user/list-by-email
+Content-Type: application/json
+
+{
+  "email": "ronaldoLima.2222@gmail.com"
+}
+
+
+
+###
 # @name delete-user-by-id
 DELETE   {{baseUrl}}/user/delete/146ee11b-b598-49d8-9669-8c8af7ed49ba
 Content-Type: application/json
+

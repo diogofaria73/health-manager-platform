@@ -10,7 +10,7 @@ import { ZodPipeValidator } from '@/infra/utils/pipes/zod-pipe-validator';
 import { z } from 'zod';
 import { DeleteUserUseCase } from '@/domain/user/use-cases/delete-user-use-case';
 import { UsersNotFound } from '@/domain/user/use-cases/error-messages/user-not-found-error-message';
-import { userPresenter } from '../presenter/user-data-presenter';
+import { UserPresenter } from '../presenter/user-data-presenter';
 
 const deleteUserParamSchema = z.object({
   id: z.string().uuid() || z.string().cuid(),
@@ -41,6 +41,6 @@ export class DeleteUserController {
 
     const user = result.value.user;
 
-    return { user_deleted: userPresenter.toHttp(user) };
+    return { user_deleted: UserPresenter.toHttp(user) };
   }
 }

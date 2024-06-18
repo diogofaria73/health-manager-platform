@@ -6,7 +6,7 @@ import {
   Get,
   NotFoundException,
 } from '@nestjs/common';
-import { userPresenter } from '../presenter/user-data-presenter';
+import { UserPresenter } from '../presenter/user-data-presenter';
 
 @Controller('users')
 export class ListAllUsersController {
@@ -29,6 +29,6 @@ export class ListAllUsersController {
 
     const users = result.value.users;
 
-    return { users_list: users.map(userPresenter.toHttp) };
+    return { users_list: users.map(UserPresenter.toHttp) };
   }
 }

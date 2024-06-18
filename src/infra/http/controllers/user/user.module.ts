@@ -13,12 +13,18 @@ import { DeleteUserUseCase } from '@/domain/user/use-cases/delete-user-use-case'
 import { DeleteUserController } from './actions/delete-user-by-id-controller';
 import { UpdateAndDeleteUserAbstractRepository } from '@/domain/user/contracts/update-and-delete-user-abstract-repository';
 import { UpdateAndDeleteUserConcreteRepository } from '@/infra/databases/repositories/user/updated-and-delete-user-concrete-repository';
+import { ListUserByEmailController } from './actions/list-user-by-email-controller';
+import { ListUserByIdController } from './actions/list-user-by-id-controller';
+import { ListUserByEmailUseCase } from '@/domain/user/use-cases/list-users-by-email-use-case';
+import { ListUserByIdUseCase } from '@/domain/user/use-cases/list-users-by-id-use-case';
 
 @Module({
   imports: [DatabaseModule],
   controllers: [
     CreateUserController,
     ListAllUsersController,
+    ListUserByEmailController,
+    ListUserByIdController,
     DeleteUserController,
   ],
   providers: [
@@ -29,6 +35,8 @@ import { UpdateAndDeleteUserConcreteRepository } from '@/infra/databases/reposit
       useClass: CreateUserConcreteRepository,
     },
     ListAllUsersUseCase,
+    ListUserByEmailUseCase,
+    ListUserByIdUseCase,
     ListUserConcreteRepository,
     {
       provide: ListUserAbstractRepository,
