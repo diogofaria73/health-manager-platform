@@ -1,8 +1,8 @@
 @baseUrl = http://localhost:3001
-## @authToken = {{authenticate.response.body.access_token}}
+@authToken = {{authenticate.response.body.access_token}}
 
 ###
-# @name list-patient-by-email
+# @name authenticate
 POST  {{baseUrl}}/authenticate/create-session
 Content-Type: application/json
 
@@ -40,6 +40,7 @@ Content-Type: application/json
 ###
 # @name list-patients
 GET {{baseUrl}}/patient/list-all
+# Authorization: Bearer {{authToken}}
 
 ###
 # @name list-patient-by-email
@@ -88,8 +89,6 @@ Content-Type: application/json
 {
   "email": "ronaldoLima.2222@gmail.com"
 }
-
-
 
 ###
 # @name delete-user-by-id

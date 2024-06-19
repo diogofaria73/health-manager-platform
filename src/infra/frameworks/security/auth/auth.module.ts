@@ -8,6 +8,7 @@ import { ListUserByEmailAndCheckCredentialsUseCase } from '@/domain/user/use-cas
 import { ListUserAbstractRepository } from '@/domain/user/contracts/list-user-abstract-repository';
 import { ListUserConcreteRepository } from '@/infra/databases/repositories/user/list-users-concrete-repository';
 import { PrismaService } from '@/infra/databases/prisma/service/prisma.service';
+import { JwtStrategyAuth } from '../strategies/jwt-strategy/jwt-strategy-auth';
 
 /**
  * AuthModule: Module for authentication, this module uses Passport and JWT and get the secret from the environment variables.
@@ -32,6 +33,7 @@ import { PrismaService } from '@/infra/databases/prisma/service/prisma.service';
   ],
   controllers: [AuthenticateController],
   providers: [
+    JwtStrategyAuth,
     ListUserByEmailAndCheckCredentialsUseCase,
     {
       provide: ListUserAbstractRepository,
