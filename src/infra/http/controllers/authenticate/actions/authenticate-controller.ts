@@ -1,5 +1,6 @@
 import { UsersCredentialsInvalid } from '@/domain/user/use-cases/error-messages/user-credentials-invalid';
 import { ListUserByEmailAndCheckCredentialsUseCase } from '@/domain/user/use-cases/list-user-by-email-and-check-credentials-use-case';
+import { Public } from '@/infra/frameworks/security/auth/public';
 import {
   BadRequestException,
   Body,
@@ -18,6 +19,7 @@ const createUserSessionBodySchema = z.object({
 type CreateUserSessionBody = z.infer<typeof createUserSessionBodySchema>;
 
 @Controller('authenticate')
+@Public()
 export class AuthenticateController {
   constructor(
     private readonly jwt: JwtService,

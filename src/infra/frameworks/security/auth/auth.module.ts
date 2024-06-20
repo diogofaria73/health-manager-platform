@@ -9,6 +9,8 @@ import { ListUserAbstractRepository } from '@/domain/user/contracts/list-user-ab
 import { ListUserConcreteRepository } from '@/infra/databases/repositories/user/list-users-concrete-repository';
 import { PrismaService } from '@/infra/databases/prisma/service/prisma.service';
 import { JwtStrategyAuth } from '../strategies/jwt-strategy/jwt-strategy-auth';
+import { APP_GUARD } from '@nestjs/core';
+import { JwtAuthGuard } from './jwt-auth.guard';
 
 /**
  * AuthModule: Module for authentication, this module uses Passport and JWT and get the secret from the environment variables.
@@ -34,6 +36,10 @@ import { JwtStrategyAuth } from '../strategies/jwt-strategy/jwt-strategy-auth';
   controllers: [AuthenticateController],
   providers: [
     JwtStrategyAuth,
+    {
+      provide: APP_GUARD,
+      useClass: JwtAuthGuard,
+    },
     ListUserByEmailAndCheckCredentialsUseCase,
     {
       provide: ListUserAbstractRepository,

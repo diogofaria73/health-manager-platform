@@ -11,6 +11,7 @@ import {
 } from '@nestjs/common';
 import { z } from 'zod';
 import { UserPresenter } from '../presenter/user-data-presenter';
+import { Public } from '@/infra/frameworks/security/auth/public';
 
 const createUserBodySchema = z.object({
   name: z.string(),
@@ -21,6 +22,7 @@ const createUserBodySchema = z.object({
 
 type CreateUserBodySchema = z.infer<typeof createUserBodySchema>;
 
+@Public()
 @Controller('users')
 @UsePipes(new ZodPipeValidator(createUserBodySchema))
 export class CreateUserController {

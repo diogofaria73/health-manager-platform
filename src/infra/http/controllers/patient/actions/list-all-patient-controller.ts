@@ -5,10 +5,8 @@ import {
   Controller,
   Get,
   NotFoundException,
-  UseGuards,
 } from '@nestjs/common';
 import { PatientPresenter } from '../presenter/patient-data-presenter';
-import { AuthGuard } from '@nestjs/passport';
 
 @Controller('patients')
 export class ListAllPatientsController {
@@ -16,7 +14,6 @@ export class ListAllPatientsController {
     private readonly listAllPatientsUseCase: ListAllPatientsUseCase,
   ) {}
 
-  @UseGuards(AuthGuard('jwt'))
   @Get('list-all')
   async handle() {
     const result = await this.listAllPatientsUseCase.execute();
