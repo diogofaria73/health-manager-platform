@@ -18,7 +18,7 @@ const deleteUserParamSchema = z.object({
 
 type DeleteUserParamSchema = z.infer<typeof deleteUserParamSchema>;
 
-@Controller('user')
+@Controller('users')
 @UsePipes(new ZodPipeValidator(deleteUserParamSchema))
 export class DeleteUserController {
   constructor(private readonly deleteUserUseCase: DeleteUserUseCase) {}

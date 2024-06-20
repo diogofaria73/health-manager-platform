@@ -17,6 +17,8 @@ import { ListUserByEmailController } from './actions/list-user-by-email-controll
 import { ListUserByIdController } from './actions/list-user-by-id-controller';
 import { ListUserByEmailUseCase } from '@/domain/user/use-cases/list-users-by-email-use-case';
 import { ListUserByIdUseCase } from '@/domain/user/use-cases/list-users-by-id-use-case';
+import { UpdateUserUseCase } from '@/domain/user/use-cases/update-user-use-case';
+import { UpdateUserController } from './actions/update-user-controller';
 
 @Module({
   imports: [DatabaseModule],
@@ -26,6 +28,7 @@ import { ListUserByIdUseCase } from '@/domain/user/use-cases/list-users-by-id-us
     ListUserByEmailController,
     ListUserByIdController,
     DeleteUserController,
+    UpdateUserController,
   ],
   providers: [
     CreateUserUseCase,
@@ -48,6 +51,7 @@ import { ListUserByIdUseCase } from '@/domain/user/use-cases/list-users-by-id-us
       provide: UpdateAndDeleteUserAbstractRepository,
       useClass: UpdateAndDeleteUserConcreteRepository,
     },
+    UpdateUserUseCase,
   ],
   exports: [],
 })

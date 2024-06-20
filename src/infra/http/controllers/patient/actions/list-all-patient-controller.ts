@@ -10,7 +10,7 @@ import {
 import { PatientPresenter } from '../presenter/patient-data-presenter';
 import { AuthGuard } from '@nestjs/passport';
 
-@Controller('patient')
+@Controller('patients')
 export class ListAllPatientsController {
   constructor(
     private readonly listAllPatientsUseCase: ListAllPatientsUseCase,

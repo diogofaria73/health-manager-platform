@@ -10,6 +10,7 @@ import {
   UsePipes,
 } from '@nestjs/common';
 import { z } from 'zod';
+import { UserPresenter } from '../presenter/user-data-presenter';
 
 const createUserBodySchema = z.object({
   name: z.string(),
@@ -47,6 +48,6 @@ export class CreateUserController {
       }
     }
 
-    return { user_created: result.value.user };
+    return { user_created: UserPresenter.toHttp(result.value.user) };
   }
 }

@@ -18,7 +18,7 @@ const listUserByIdParamSchema = z.object({
 
 type ListUserByIdParamSchema = z.infer<typeof listUserByIdParamSchema>;
 
-@Controller('user')
+@Controller('users')
 @UsePipes(new ZodPipeValidator(listUserByIdParamSchema))
 export class ListUserByIdController {
   constructor(private readonly listUserByIdUseCase: ListUserByIdUseCase) {}

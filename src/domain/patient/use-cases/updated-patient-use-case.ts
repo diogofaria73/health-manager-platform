@@ -4,14 +4,7 @@ import { ListPatientAbstractRepository } from '../contracts/list-patient-abstrac
 import { Either, left, right } from '@/core/either';
 import { PatientsNotFound } from './error-messages/patients-not-found-error-message';
 import { PatientEntity } from '../entities/patient-entity';
-
-interface UpdatePatientUseCaseRequest {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  isActive: boolean;
-}
+import { UpdatePatientEntity } from '../entities/update-patient-entity';
 
 type updatedPatientUseCaseResponse = Either<
   PatientsNotFound,
@@ -28,7 +21,7 @@ export class UpdatePatientUseCase {
   ) {}
 
   async execute(
-    patient: UpdatePatientUseCaseRequest,
+    patient: UpdatePatientEntity,
   ): Promise<updatedPatientUseCaseResponse> {
     const { id } = patient;
 

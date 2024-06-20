@@ -18,7 +18,7 @@ const listUserByEmailBodySchema = z.object({
 
 type ListUserByEmailBodySchema = z.infer<typeof listUserByEmailBodySchema>;
 
-@Controller('user')
+@Controller('users')
 @UsePipes(new ZodPipeValidator(listUserByEmailBodySchema))
 export class ListUserByEmailController {
   constructor(

@@ -2,9 +2,9 @@ import { PatientsNotFound } from '@/domain/patient/use-cases/error-messages/pati
 import {
   BadRequestException,
   Controller,
+  Get,
   NotFoundException,
   Param,
-  Post,
   UsePipes,
 } from '@nestjs/common';
 import { PatientPresenter } from '../presenter/patient-data-presenter';
@@ -25,7 +25,7 @@ export class ListPatientByIdController {
     private readonly listPatientByIdUseCase: ListPatientByIdUseCase,
   ) {}
 
-  @Post('list-by-id')
+  @Get('list-by-id/:id')
   async handle(@Param() params: PatientParamSchema) {
     const { id } = params;
     const result = await this.listPatientByIdUseCase.execute(id);

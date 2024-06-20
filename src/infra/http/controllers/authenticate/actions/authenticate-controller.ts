@@ -24,7 +24,7 @@ export class AuthenticateController {
     private readonly listUserByEmailAndCheckCredentialsUseCase: ListUserByEmailAndCheckCredentialsUseCase,
   ) {}
 
-  @Post('/create-session')
+  @Post('create-session')
   async handle(@Body() body: CreateUserSessionBody) {
     const { email, password } = body;
 

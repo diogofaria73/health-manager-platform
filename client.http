@@ -40,7 +40,7 @@ Content-Type: application/json
 ###
 # @name list-patients
 GET {{baseUrl}}/patient/list-all
-# Authorization: Bearer {{authToken}}
+Authorization: Bearer {{authToken}}
 
 ###
 # @name list-patient-by-email

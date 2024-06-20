@@ -3,8 +3,8 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Get,
   NotFoundException,
-  Post,
   UsePipes,
 } from '@nestjs/common';
 import { PatientPresenter } from '../presenter/patient-data-presenter';
@@ -18,14 +18,14 @@ const createPatientBodySchema = z.object({
 
 type CreatePatientBodySchema = z.infer<typeof createPatientBodySchema>;
 
-@Controller('patient')
+@Controller('patients')
 @UsePipes(new ZodPipeValidator(createPatientBodySchema))
 export class ListPatientByEmailController {
   constructor(
     private readonly listPatientByEmailUseCase: ListPatientByEmailUseCase,
   ) {}
 
-  @Post('list-by-email')
+  @Get('list-by-email')
   async handle(@Body() body: CreatePatientBodySchema) {
     const { email } = body;
     const result = await this.listPatientByEmailUseCase.execute(email);
